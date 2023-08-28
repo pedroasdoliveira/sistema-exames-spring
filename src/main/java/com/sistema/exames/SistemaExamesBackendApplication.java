@@ -24,13 +24,13 @@ public class SistemaExamesBackendApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		User user = new User();
+		/*User user = new User();
 		user.setName("Pedro");
-		user.setNickname("Oliveira");
-		user.setUsername("pedro");
-		user.setPassword("Pa44528033");
-		user.setEmail("pedroaolive@gmail.com");
-		user.setPhone("11992351348");
+		user.setNickname("Henrique");
+		user.setUsername("pedhenri");
+		user.setPassword("44528033");
+		user.setEmail("pedro@gmail.com");
+		user.setPhone("119924534879");
 		user.setProfile("foto.png");
 
 		Rol rol = new Rol();
@@ -44,6 +44,6 @@ public class SistemaExamesBackendApplication implements CommandLineRunner {
 		userRoles.add(userRol);
 
 		User userSave = userService.saveUser(user, userRoles);
-		System.out.println(userSave.getUsername());
+		System.out.println(userSave.getUsername());*/
 	}
 }

@@ -1,5 +1,7 @@
 package com.sistema.exames.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
@@ -23,6 +25,7 @@ public class User {
     private String profile;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
+    @JsonIgnore
     private Set<UserRol> userRol = new HashSet<>();
 
     public User() {}
