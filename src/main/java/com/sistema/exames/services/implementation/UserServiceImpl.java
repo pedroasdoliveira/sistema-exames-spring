@@ -2,6 +2,7 @@ package com.sistema.exames.services.implementation;
 
 import com.sistema.exames.entities.User;
 import com.sistema.exames.entities.UserRol;
+import com.sistema.exames.exceptions.UserFoundException;
 import com.sistema.exames.repositories.RolRepository;
 import com.sistema.exames.repositories.UserRepository;
 import com.sistema.exames.services.UserService;
@@ -25,7 +26,7 @@ public class UserServiceImpl implements UserService {
 
         if (userLocal != null) {
             System.out.println("O usuário já existe!");
-            throw new Exception("O usuário já existe no servidor!");
+            throw new UserFoundException("O usuário já existe no servidor!");
         } else {
             for (UserRol userRol:userRoles) {
                 rolRepository.save(userRol.getRol());

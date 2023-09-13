@@ -34,7 +34,7 @@ public class AuthenticationController {
     public ResponseEntity<?> generarToken(@RequestBody JwtRequest jwtRequest) throws Exception {
         try{
             autenticar(jwtRequest.getUsername(),jwtRequest.getPassword());
-        }catch (Exception exception){
+        }catch (UsernameNotFoundException exception){
             exception.printStackTrace();
             throw new Exception("Usuario não encontrado!");
         }
@@ -48,9 +48,9 @@ public class AuthenticationController {
         try{
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username,password));
         }catch (DisabledException exception){
-            throw  new Exception("USUáRIO DESABILITADO " + exception.getMessage());
+            throw new Exception("USUáRIO DESABILITADO " + exception.getMessage());
         }catch (BadCredentialsException e){
-            throw  new Exception("Credenciais inválidas " + e.getMessage());
+            throw new Exception("Credenciais inválidas " + e.getMessage());
         }
     }
 
